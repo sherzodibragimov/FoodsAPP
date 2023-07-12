@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/mainScreen">
+
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="com.example.foodsapp.ui.main.MainScreen"
+        android:label="screen_main"
+        tools:layout="@layout/screen_main" >
+        <action
+            android:id="@+id/action_mainScreen_to_favouritePage"
+            app:destination="@id/favouritePage" />
+        <action
+            android:id="@+id/action_mainScreen_to_homePage"
+            app:destination="@id/homePage" />
+        <action
+            android:id="@+id/action_mainScreen_to_detailScreen"
+            app:destination="@id/detailScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/homePage"
+        android:name="com.example.foodsapp.ui.home.HomePage"
+        android:label="page_home"
+        tools:layout="@layout/page_home" />
+    <fragment
+        android:id="@+id/favouritePage"
+        android:name="com.example.foodsapp.ui.favorite.FavouritePage"
+        android:label="page_favourite"
+        tools:layout="@layout/page_favourite" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailScreen"
+        android:name="com.example.foodsapp.ui.detail.DetailScreen"
+        android:label="screen_detail"
+        tools:layout="@layout/screen_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+</navigation>
