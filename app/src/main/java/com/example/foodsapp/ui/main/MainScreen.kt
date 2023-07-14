@@ -18,13 +18,7 @@ import org.greenrobot.eventbus.ThreadMode
 class MainScreen :BaseFragment(R.layout.screen_main)  {
     private val binding by viewBinding(ScreenMainBinding::bind)
     override fun onCreate(view: View, savedInstanceState: Bundle?) {
-        if (ThemeCache.getIndex()==0){
-            ThemeCache.changeNight()
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        }else{
-            ThemeCache.changeDay()
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        }
+
         setAdapter()
     }
 
