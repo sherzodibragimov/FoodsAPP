@@ -1,4 +1,4 @@
-package com.example.foodsapp.ui.home
+package com.example.foodsapp.ui.favorite
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,7 +10,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class HomePageViewModel:ViewModel() {
+class FavouriteViewModel:ViewModel() {
     private var repo=MealRepository()
     /** Success Data */
     private val dataLiveSuccess:MutableLiveData<AllFoodsResponse?> = MutableLiveData<AllFoodsResponse?>()
@@ -24,22 +24,6 @@ class HomePageViewModel:ViewModel() {
     fun getFoodList(){
         CoroutineScope(Dispatchers.IO).launch {
             val result= repo.getFoodRepo()
-            when(result){
-                is ResultWrapper.Success->{
-                    dataLiveSuccess.postValue(result.data)
-                }
-                is ResultWrapper.ErrorResponse->{
-                    dataLiveError.postValue(result.message.toString())
-                }
-                is ResultWrapper.NetworkError->{
-
-                }
-            }
-        }
-    }
-    fun getFoodSearchList(str:String){
-        CoroutineScope(Dispatchers.IO).launch {
-            val result= repo.getFoodSearchRepo(str)
             when(result){
                 is ResultWrapper.Success->{
                     dataLiveSuccess.postValue(result.data)

@@ -2,6 +2,7 @@ package com.example.foodsapp.core.app
 
 import android.app.Application
 import com.example.foodsapp.core.db.SaveFoods
+import com.example.foodsapp.core.db.ThemeCache
 
 class App : Application(){
 
@@ -13,5 +14,6 @@ class App : Application(){
         super.onCreate()
         instance= this
         SaveFoods.init(this)
+        ThemeCache.init(this)
     }
 }

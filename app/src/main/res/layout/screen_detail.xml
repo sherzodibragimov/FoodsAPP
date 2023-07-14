@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:id="@+id/topHeader"
-        android:background="@color/backgroundTop"
+        android:background="@color/backgroundBottom"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,7 +18,7 @@
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            tools:src="@drawable/back_ios"
+            android:src="@drawable/back_ios"
             android:id="@+id/back_button"
             android:background="?selectableItemBackground"
             android:layout_gravity="center_vertical|start"
@@ -37,7 +37,7 @@
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            tools:src="@drawable/staroff"
+            android:src="@drawable/staroff"
             android:id="@+id/favourite_button"
             android:background="?selectableItemBackground"
             android:layout_gravity="center_vertical|end"

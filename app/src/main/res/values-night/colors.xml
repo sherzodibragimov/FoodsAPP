@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FFFFFF</color>
+    <color name="white">#000000</color>
+    <color name="backgroundTop">#A1A7B4</color>
+    <color name="backgroundBottom">#8AAFC5</color>
+    <color name="shimmerColor">#2477AB</color>
+</resources>

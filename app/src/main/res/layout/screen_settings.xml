@@ -4,11 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.settings.SettingsScreen">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="SETTINGS" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="25sp"
+    android:layout_gravity="center|top"
+    android:layout_marginTop="40dp"
+    android:text="Change Theme"/>
+    <com.vimalcvs.switchdn.DayNightSwitch
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:id="@+id/switchButton"/>
 
 </FrameLayout>

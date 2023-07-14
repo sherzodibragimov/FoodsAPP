@@ -5,10 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.foodsapp.R
+import com.example.foodsapp.core.db.SaveFoods
 import com.example.foodsapp.core.model.allfood.Meal
 import com.example.foodsapp.databinding.ItemFoodsBinding
 
-class AllFoodsAdapter:RecyclerView.Adapter<AllFoodsAdapter.AllFoodsAdapterAdapterViewHolder>() {
+class FavouriteAdapter:RecyclerView.Adapter<FavouriteAdapter.FavouriteAdapterViewHolder>() {
 
     lateinit var onItemClick:((a:Int)->Unit)
     private val data= ArrayList<Meal>()
@@ -18,7 +19,7 @@ class AllFoodsAdapter:RecyclerView.Adapter<AllFoodsAdapter.AllFoodsAdapterAdapte
         this.data.addAll(date)
         notifyDataSetChanged()
     }
-    inner class AllFoodsAdapterAdapterViewHolder(val binding: ItemFoodsBinding):RecyclerView.ViewHolder(binding.root){
+    inner class FavouriteAdapterViewHolder(val binding: ItemFoodsBinding):RecyclerView.ViewHolder(binding.root){
         fun setdata(data:Meal) {
             binding.imageFood.load(data.strMealThumb){
                 placeholder (R.drawable.unnamed)
@@ -34,16 +35,18 @@ class AllFoodsAdapter:RecyclerView.Adapter<AllFoodsAdapter.AllFoodsAdapterAdapte
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllFoodsAdapterAdapterViewHolder {
-        return AllFoodsAdapterAdapterViewHolder(ItemFoodsBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavouriteAdapterViewHolder {
+        return FavouriteAdapterViewHolder(ItemFoodsBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     override fun getItemCount(): Int {
         return data.size
     }
 
-    override fun onBindViewHolder(holder: AllFoodsAdapterAdapterViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FavouriteAdapterViewHolder, position: Int) {
         val data = data[position]
-        holder.setdata(data)
+        if (SaveFoods.getSaveResult().contains(data.idMeal.toInt())){
+            holder.setdata(data)
+        }
     }
 }

@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="backgroundTop">#4A7EEE</color>
     <color name="backgroundBottom">#13415C</color>
+    <color name="shimmerColor">#BCD4E3</color>
 </resources>

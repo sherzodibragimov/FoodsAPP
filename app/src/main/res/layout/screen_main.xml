@@ -9,7 +9,7 @@
        android:layout_width="match_parent"
        android:layout_height="?actionBarSize"
        app:layout_constraintTop_toTopOf="parent"
-       android:background="@color/backgroundTop"
+       android:background="@color/backgroundBottom"
        android:id="@+id/top_header"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintEnd_toEndOf="parent">

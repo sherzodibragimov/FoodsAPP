@@ -1,6 +1,7 @@
 package com.example.foodsapp.core.network
 
 import com.example.foodsapp.core.model.allfood.AllFoodsResponse
+import com.example.foodsapp.core.model.categoriy.MealCategory
 import com.example.foodsapp.core.model.foods.FoodsByIdResponse
 import retrofit2.Response
 import retrofit2.http.GET
@@ -13,5 +14,8 @@ interface MealService {
 
     @GET("/api/json/v1/1/lookup.php")
     suspend fun getFoodsByID(@Query("i") id:Int):Response<FoodsByIdResponse?>
+
+    @GET("/api/json/v1/1/list.php?c=list")
+    suspend fun getCategory():Response<MealCategory?>
 
 }

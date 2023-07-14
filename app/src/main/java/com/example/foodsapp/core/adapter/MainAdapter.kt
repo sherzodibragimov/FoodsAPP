@@ -16,6 +16,6 @@ class MainAdapter(fragmentManager: FragmentManager,lifecycle: Lifecycle):Fragmen
         0->HomePage()
         1->FavouritePage()
         2->SettingsScreen()
-        else-> HomePage()
+        else-> SettingsScreen()
     }
 }
