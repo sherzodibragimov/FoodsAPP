@@ -11,6 +11,8 @@ import com.example.foodsapp.core.base.BaseFragment
 import com.example.foodsapp.core.db.ThemeCache
 import com.example.foodsapp.core.util.Constants
 import com.example.foodsapp.databinding.ScreenMainBinding
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 
 class MainScreen :BaseFragment(R.layout.screen_main)  {
@@ -42,6 +44,5 @@ class MainScreen :BaseFragment(R.layout.screen_main)  {
                 2->binding.viewPager.setCurrentItem(2,false)
             }
         }
-
     }
 }
